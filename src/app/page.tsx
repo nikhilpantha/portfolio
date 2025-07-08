@@ -1,102 +1,201 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+
+const sections = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
+
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen flex flex-col">
+      {/* Navbar */}
+      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+          <span className="font-bold text-xl text-blue-600">Nikhil Pantha</span>
+          <ul className="flex gap-6">
+            {sections.map((section) => (
+              <li key={section.id}>
+                <button
+                  className="text-gray-700 dark:text-gray-200 hover:text-blue-600 transition-colors font-medium"
+                  onClick={() => scrollToSection(section.id)}
+                >
+                  {section.label}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="flex-1 max-w-4xl mx-auto w-full px-4">
+        {/* Hero Section */}
+        <section
+          id="home"
+          className="flex flex-col items-center justify-center min-h-[60vh] text-center pt-16"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white"
+          >
+            Hi, I&apos;m Nikhil Pantha
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+            className="text-xl text-gray-600 dark:text-gray-300 mb-6"
+          >
+            React & React Native Frontend Engineer
+          </motion.p>
+          <div className="flex gap-4 justify-center">
+            <a href="#" className="text-blue-600 hover:underline">
+              GitHub
+            </a>
+            <a href="#" className="text-blue-600 hover:underline">
+              LinkedIn
+            </a>
+            <a href="#" className="text-blue-600 hover:underline">
+              Resume
+            </a>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-20">
+          <motion.h2
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-bold mb-4 text-gray-900 dark:text-white"
+          >
+            About Me
+          </motion.h2>
+          <p className="text-gray-700 dark:text-gray-300 max-w-2xl">
+            I am a passionate frontend engineer specializing in building
+            beautiful, performant web and mobile apps using React and React
+            Native. I love crafting delightful user experiences and solving
+            real-world problems with code.
+          </p>
+        </section>
+
+        {/* Skills Section */}
+        <section id="skills" className="py-20">
+          <motion.h2
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-bold mb-4 text-gray-900 dark:text-white"
+          >
+            Skills
+          </motion.h2>
+          <div className="flex flex-wrap gap-4">
+            <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded font-semibold">
+              React
+            </span>
+            <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded font-semibold">
+              React Native
+            </span>
+            <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded font-semibold">
+              TypeScript
+            </span>
+            <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded font-semibold">
+              JavaScript
+            </span>
+            <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded font-semibold">
+              Next.js
+            </span>
+            <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded font-semibold">
+              Tailwind CSS
+            </span>
+            <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded font-semibold">
+              Framer Motion
+            </span>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-bold mb-8 text-gray-900 dark:text-white"
+          >
+            Projects
+          </motion.h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Example Project Card */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="bg-white dark:bg-gray-800 rounded-lg shadow p-6"
+            >
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                Project One
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-2">
+                A brief description of your project goes here. Highlight what
+                makes it special!
+              </p>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded text-xs">
+                  React
+                </span>
+                <span className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded text-xs">
+                  Next.js
+                </span>
+              </div>
+              <a href="#" className="text-blue-600 hover:underline text-sm">
+                View on GitHub
+              </a>
+            </motion.div>
+            {/* Add more project cards as needed */}
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-bold mb-4 text-gray-900 dark:text-white"
+          >
+            Contact
+          </motion.h2>
+          <p className="text-gray-700 dark:text-gray-300 mb-6">
+            Feel free to reach out for collaborations or just a friendly hello!
+          </p>
+          <a
+            href="mailto:your.email@example.com"
+            className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition"
+          >
+            Email Me
+          </a>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-4 text-center text-gray-500 text-sm">
+        &copy; {new Date().getFullYear()} Nikhil Pantha. All rights reserved.
       </footer>
     </div>
   );
