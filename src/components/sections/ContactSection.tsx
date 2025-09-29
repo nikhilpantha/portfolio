@@ -6,12 +6,12 @@ import { useToast } from "@/components/providers/ToastProvider";
 
 export function ContactSection() {
   const { showSuccess } = useToast();
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,14 +19,14 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     // Reset form
     setFormData({ name: "", email: "", subject: "", message: "" });
     setIsSubmitting(false);
-    
+
     // Show beautiful success toast
     showSuccess(
       "Message sent successfully!",
@@ -35,54 +35,96 @@ export function ContactSection() {
     );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
   const contactInfo = [
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
         </svg>
       ),
       title: "Email",
       value: SITE_DATA.contact.contactInfo.email,
-      link: `mailto:${SITE_DATA.contact.contactInfo.email}`
+      link: `mailto:${SITE_DATA.contact.contactInfo.email}`,
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+          />
         </svg>
       ),
       title: "Location",
       value: SITE_DATA.contact.contactInfo.location,
-      link: null
+      link: null,
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
         </svg>
       ),
       title: "Response Time",
       value: SITE_DATA.contact.availability.responseTime,
-      link: null
-    }
+      link: null,
+    },
   ];
 
   return (
-    <section id="contact" className="py-24 px-6 bg-gray-50/60 dark:bg-slate-50/10">
+    <section
+      id="contact"
+      className="py-24 px-6 bg-gray-50/60 dark:bg-slate-50/10"
+    >
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-16">
           {/* Section Header */}
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient">{SITE_DATA.contact.title}</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gradient">
+              {SITE_DATA.contact.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {SITE_DATA.contact.subtitle}
             </p>
@@ -94,7 +136,8 @@ export function ContactSection() {
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold">Send a Message</h3>
                 <p className="text-muted-foreground">
-                  Fill out the form below and I&apos;ll get back to you as soon as possible.
+                  Fill out the form below and I&apos;ll get back to you as soon
+                  as possible.
                 </p>
               </div>
 
@@ -112,7 +155,9 @@ export function ContactSection() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
-                      placeholder={SITE_DATA.contact.form.fields.name.placeholder}
+                      placeholder={
+                        SITE_DATA.contact.form.fields.name.placeholder
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -127,7 +172,9 @@ export function ContactSection() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
-                      placeholder={SITE_DATA.contact.form.fields.email.placeholder}
+                      placeholder={
+                        SITE_DATA.contact.form.fields.email.placeholder
+                      }
                     />
                   </div>
                 </div>
@@ -143,7 +190,9 @@ export function ContactSection() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
-                    placeholder={SITE_DATA.contact.form.fields.subject.placeholder}
+                    placeholder={
+                      SITE_DATA.contact.form.fields.subject.placeholder
+                    }
                   />
                 </div>
                 <div className="space-y-2">
@@ -158,7 +207,9 @@ export function ContactSection() {
                     required
                     rows={6}
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200 resize-none"
-                    placeholder={SITE_DATA.contact.form.fields.message.placeholder}
+                    placeholder={
+                      SITE_DATA.contact.form.fields.message.placeholder
+                    }
                   />
                 </div>
                 <button
@@ -166,7 +217,9 @@ export function ContactSection() {
                   disabled={isSubmitting}
                   className="w-full px-6 py-4 bg-gradient text-primary-foreground rounded-lg font-semibold hover-lift focus-ring disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                 >
-                  {isSubmitting ? "Sending..." : SITE_DATA.contact.form.submitButton}
+                  {isSubmitting
+                    ? "Sending..."
+                    : SITE_DATA.contact.form.submitButton}
                 </button>
               </form>
             </div>
@@ -176,7 +229,8 @@ export function ContactSection() {
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold">Contact Information</h3>
                 <p className="text-muted-foreground">
-                  Prefer to reach out directly? Here are the best ways to contact me.
+                  Prefer to reach out directly? Here are the best ways to
+                  contact me.
                 </p>
               </div>
 
@@ -226,14 +280,27 @@ export function ContactSection() {
               <div className="p-6 bg-card border border-border rounded-xl">
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0">
-                    <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg
+                      className="w-6 h-6 text-green-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
                     </svg>
                   </div>
                   <div className="space-y-1">
-                    <h4 className="font-medium">{SITE_DATA.contact.availability.status}</h4>
+                    <h4 className="font-medium">
+                      {SITE_DATA.contact.availability.status}
+                    </h4>
                     <p className="text-sm text-muted-foreground">
-                      {SITE_DATA.contact.availability.responseTime}. {SITE_DATA.contact.availability.workingHours}
+                      {SITE_DATA.contact.availability.responseTime}.{" "}
+                      {SITE_DATA.contact.availability.workingHours}
                     </p>
                   </div>
                 </div>
