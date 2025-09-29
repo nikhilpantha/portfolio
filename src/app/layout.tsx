@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ToastProvider } from "@/components/providers/ToastProvider";
 import { Navigation } from "@/components/Layout/Navigation";
 import { LoadingScreen } from "@/components/Layout/LoadingScreen";
 import { SITE_DATA } from "@/config";
@@ -59,8 +60,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navigation />
-          <LoadingScreen>
+          <ToastProvider>
+            <Navigation />
+            <LoadingScreen>
             <div className="relative min-h-screen bg-background">
               {/* Enhanced background effects */}
               <div className="fixed inset-0 -z-10">
@@ -99,6 +101,7 @@ export default function RootLayout({
               </div>
             </div>
           </LoadingScreen>
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>

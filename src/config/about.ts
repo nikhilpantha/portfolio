@@ -34,7 +34,7 @@ export const aboutConfig = {
     { label: "Experience", value: "4+ yrs" },
     { label: "Success Rate", value: "100%" },
   ],
-  technologies: ["React", "Next.js", "TypeScript", "Node.js", "AWS", "Docker"],
+  technologies: ["React", "Next.js", "TypeScript", "AWS", "Docker"],
   callToAction: {
     title: "Ready to bring your vision to life?",
     description:

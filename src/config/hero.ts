@@ -36,5 +36,5 @@ export const heroConfig = {
       delay: "1s",
     },
   ],
-  floatingSkills: ["React", "Next.js", "TypeScript", "Node.js"],
+  floatingSkills: ["React", "Next.js", "TypeScript", "React Native"],
 };

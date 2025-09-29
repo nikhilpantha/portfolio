@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import { SITE_DATA } from "@/config";
+import { useToast } from "@/components/providers/ToastProvider";
 
 export function ContactSection() {
+  const { showSuccess } = useToast();
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,8 +27,12 @@ export function ContactSection() {
     setFormData({ name: "", email: "", subject: "", message: "" });
     setIsSubmitting(false);
     
-    // Show success message (you can implement a proper toast/notification system)
-    alert("Message sent successfully! I&apos;ll get back to you soon.");
+    // Show beautiful success toast
+    showSuccess(
+      "Message sent successfully!",
+      "Your request has been sent and will be responded to within 24 hours. Thank you for reaching out!",
+      6000
+    );
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
