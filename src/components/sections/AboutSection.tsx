@@ -15,7 +15,7 @@ export function AboutSection() {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.2 },
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -35,31 +35,20 @@ export function AboutSection() {
     {
       year: "2024",
       period: "Present",
-      title: "React Native Developer",
+      title: "React Native And React Developer",
       company: "Inseed",
       type: "Full-time • Hybrid",
       description:
-        "Building cross-platform mobile applications with modern React Native architecture",
-      technologies: ["React Native", "TypeScript", "Mobile Dev"],
+        "Building cross-platform mobile and web applications with modern React Native and React architecture",
+      technologies: ["React", "React Native", "TypeScript", "Mobile Dev"],
       status: "current",
-    },
-    {
-      year: "2023",
-      period: "2024",
-      title: "Software Engineer",
-      company: "Gurzu Inc.",
-      type: "Full-time • 1 yr 1 mo",
-      description:
-        "Developed software solutions with focus on problem solving and comprehensive code review",
-      technologies: ["Problem Solving", "Code Review", "Software Architecture"],
-      status: "completed",
     },
     {
       year: "2022",
       period: "2023",
       title: "React Developer",
       company: "Prabidhi Labs",
-      type: "Full-time • 1 yr 7 mos",
+      type: "Full-time • 1 yr 9 mos",
       description:
         "Built modern web applications using React.js ecosystem and advanced JavaScript patterns",
       technologies: ["React.js", "HTML5", "JavaScript", "Web Apps"],
@@ -70,7 +59,7 @@ export function AboutSection() {
       period: "2021",
       title: "React Developer",
       company: "Lightweb Group",
-      type: "Remote • 1 yr 3 mos",
+      type: "Remote • 1 yr 9 mos",
       description:
         "Started professional journey developing responsive web applications with JavaScript libraries",
       technologies: ["JavaScript", "Responsive Design", "Web Libraries"],
@@ -209,8 +198,8 @@ export function AboutSection() {
                         experience.status === "current"
                           ? "from-primary/5 via-accent/5 to-primary/10 border-primary/20 shadow-primary/10 border-2 bg-gradient-to-br shadow-lg"
                           : index % 2 === 0
-                          ? "from-card/60 to-card/30 border-border hover:border-primary/30 border bg-gradient-to-br"
-                          : "from-slate-900/40 to-slate-800/30 dark:from-slate-100/5 dark:to-slate-50/10 border-border hover:border-accent/30 border bg-gradient-to-br"
+                            ? "from-card/60 to-card/30 border-border hover:border-primary/30 border bg-gradient-to-br"
+                            : "from-slate-900/40 to-slate-800/30 dark:from-slate-100/5 dark:to-slate-50/10 border-border hover:border-accent/30 border bg-gradient-to-br"
                       }`}
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
@@ -276,7 +265,6 @@ export function AboutSection() {
                     </div>
                   ))}
                 </div>
-
               </div>
             </div>
           )}
