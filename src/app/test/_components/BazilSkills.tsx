@@ -7,8 +7,18 @@ const skillCategories = [
     category: "Frontend",
     color: "#FDA228",
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+        />
       </svg>
     ),
     skills: [
@@ -17,14 +27,24 @@ const skillCategories = [
       { name: "TypeScript", level: 92, icon: "TS" },
       { name: "Tailwind CSS", level: 88, icon: "🎨" },
       { name: "Vue.js", level: 75, icon: "💚" },
-    ]
+    ],
   },
   {
     category: "Backend",
     color: "#10B981",
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
+        />
       </svg>
     ),
     skills: [
@@ -33,14 +53,24 @@ const skillCategories = [
       { name: "Python", level: 80, icon: "🐍" },
       { name: "GraphQL", level: 85, icon: "◆" },
       { name: "REST APIs", level: 93, icon: "🔌" },
-    ]
+    ],
   },
   {
     category: "Database",
     color: "#8B5CF6",
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+        />
       </svg>
     ),
     skills: [
@@ -48,15 +78,30 @@ const skillCategories = [
       { name: "PostgreSQL", level: 85, icon: "🐘" },
       { name: "Redis", level: 82, icon: "⚡" },
       { name: "MySQL", level: 80, icon: "🐬" },
-    ]
+    ],
   },
   {
     category: "DevOps & Tools",
     color: "#EF4444",
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+        />
       </svg>
     ),
     skills: [
@@ -64,8 +109,8 @@ const skillCategories = [
       { name: "AWS", level: 82, icon: "☁️" },
       { name: "Git", level: 95, icon: "📦" },
       { name: "CI/CD", level: 80, icon: "🔄" },
-    ]
-  }
+    ],
+  },
 ];
 
 export function BazilSkills() {
@@ -77,8 +122,14 @@ export function BazilSkills() {
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#FDA228]/10 rounded-full blur-3xl animate-pulse-subtle" />
-        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#10B981]/10 rounded-full blur-3xl animate-pulse-subtle" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#8B5CF6]/5 rounded-full blur-3xl animate-pulse-subtle" style={{ animationDelay: "2s" }} />
+        <div
+          className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#10B981]/10 rounded-full blur-3xl animate-pulse-subtle"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#8B5CF6]/5 rounded-full blur-3xl animate-pulse-subtle"
+          style={{ animationDelay: "2s" }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -92,10 +143,14 @@ export function BazilSkills() {
             <div className="h-px w-12 bg-gradient-to-r from-transparent via-[#FDA228] to-transparent" />
           </div>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FDA228] via-[#10B981] to-[#8B5CF6]">Tech Arsenal</span>
+            My{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FDA228] via-[#10B981] to-[#8B5CF6]">
+              Tech Arsenal
+            </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            From pixel-perfect frontends to robust backends - I build complete, scalable solutions
+            From pixel-perfect frontends to robust backends - I build complete,
+            scalable solutions
           </p>
         </div>
 
@@ -112,17 +167,27 @@ export function BazilSkills() {
               }`}
               style={{
                 borderWidth: activeCategory === index ? "2px" : "1px",
-                borderColor: activeCategory === index ? cat.color : "transparent",
+                borderColor:
+                  activeCategory === index ? cat.color : "transparent",
               }}
             >
               <div className="flex items-center gap-3">
-                <div className={`transition-colors duration-300 ${activeCategory === index ? '' : 'text-gray-500'}`} style={{ color: activeCategory === index ? cat.color : undefined }}>
+                <div
+                  className={`transition-colors duration-300 ${activeCategory === index ? "" : "text-gray-500"}`}
+                  style={{
+                    color: activeCategory === index ? cat.color : undefined,
+                  }}
+                >
                   {cat.icon}
                 </div>
-                <span className={`transition-colors duration-300 ${activeCategory === index ? 'text-black dark:text-white' : 'text-gray-600 dark:text-gray-400'}`}>
+                <span
+                  className={`transition-colors duration-300 ${activeCategory === index ? "text-black dark:text-white" : "text-gray-600 dark:text-gray-400"}`}
+                >
                   {cat.category}
                 </span>
-                <div className={`ml-2 px-2 py-1 rounded-full text-xs font-semibold ${activeCategory === index ? 'bg-black/10 dark:bg-white/10' : 'bg-gray-200 dark:bg-gray-800'}`}>
+                <div
+                  className={`ml-2 px-2 py-1 rounded-full text-xs font-semibold ${activeCategory === index ? "bg-black/10 dark:bg-white/10" : "bg-gray-200 dark:bg-gray-800"}`}
+                >
                   {cat.skills.length}
                 </div>
               </div>
@@ -164,8 +229,10 @@ export function BazilSkills() {
                     {category.skills.map((skill, index) => {
                       const angle = (index * 360) / category.skills.length;
                       const radius = 45; // percentage
-                      const x = 50 + radius * Math.cos((angle - 90) * Math.PI / 180);
-                      const y = 50 + radius * Math.sin((angle - 90) * Math.PI / 180);
+                      const x =
+                        50 + radius * Math.cos(((angle - 90) * Math.PI) / 180);
+                      const y =
+                        50 + radius * Math.sin(((angle - 90) * Math.PI) / 180);
 
                       return (
                         <div
@@ -183,14 +250,24 @@ export function BazilSkills() {
                         >
                           <div
                             className={`w-full h-full rounded-full flex items-center justify-center text-2xl cursor-pointer transition-all duration-300 ${
-                              hoveredSkill === skill.name ? 'scale-125 shadow-2xl' : 'scale-100'
+                              hoveredSkill === skill.name
+                                ? "scale-125 shadow-2xl"
+                                : "scale-100"
                             }`}
                             style={{
-                              backgroundColor: hoveredSkill === skill.name ? category.color : 'white',
-                              boxShadow: hoveredSkill === skill.name ? `0 0 30px ${category.color}80` : '0 4px 6px rgba(0,0,0,0.1)',
+                              backgroundColor:
+                                hoveredSkill === skill.name
+                                  ? category.color
+                                  : "white",
+                              boxShadow:
+                                hoveredSkill === skill.name
+                                  ? `0 0 30px ${category.color}80`
+                                  : "0 4px 6px rgba(0,0,0,0.1)",
                             }}
                           >
-                            <span className={`${hoveredSkill === skill.name ? '' : 'grayscale'}`}>
+                            <span
+                              className={`${hoveredSkill === skill.name ? "" : "grayscale"}`}
+                            >
                               {skill.icon}
                             </span>
                           </div>
@@ -204,12 +281,19 @@ export function BazilSkills() {
                     })}
 
                     {/* Connecting Lines */}
-                    <svg className="absolute inset-0 w-full h-full" style={{ zIndex: -1 }}>
+                    <svg
+                      className="absolute inset-0 w-full h-full"
+                      style={{ zIndex: -1 }}
+                    >
                       {category.skills.map((_, index) => {
                         const angle = (index * 360) / category.skills.length;
                         const radius = 45;
-                        const x = 50 + radius * Math.cos((angle - 90) * Math.PI / 180);
-                        const y = 50 + radius * Math.sin((angle - 90) * Math.PI / 180);
+                        const x =
+                          50 +
+                          radius * Math.cos(((angle - 90) * Math.PI) / 180);
+                        const y =
+                          50 +
+                          radius * Math.sin(((angle - 90) * Math.PI) / 180);
 
                         return (
                           <line
@@ -287,7 +371,10 @@ export function BazilSkills() {
                           style={{
                             width: `${skill.level}%`,
                             backgroundColor: category.color,
-                            boxShadow: hoveredSkill === skill.name ? `0 0 20px ${category.color}` : 'none',
+                            boxShadow:
+                              hoveredSkill === skill.name
+                                ? `0 0 20px ${category.color}`
+                                : "none",
                           }}
                         >
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
@@ -305,7 +392,7 @@ export function BazilSkills() {
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { label: "Technologies", value: "20+", icon: "💻" },
-            { label: "Years Coding", value: "5+", icon: "⏱️" },
+            { label: "Years Coding", value: "4+", icon: "⏱️" },
             { label: "Projects Built", value: "50+", icon: "🚀" },
             { label: "Lines of Code", value: "100K+", icon: "📝" },
           ].map((stat) => (
@@ -314,8 +401,12 @@ export function BazilSkills() {
               className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#FDA228] transition-all duration-300 hover:scale-105 hover:shadow-xl text-center"
             >
               <div className="text-4xl mb-2">{stat.icon}</div>
-              <div className="text-3xl font-bold text-[#FDA228] mb-1">{stat.value}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+              <div className="text-3xl font-bold text-[#FDA228] mb-1">
+                {stat.value}
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>

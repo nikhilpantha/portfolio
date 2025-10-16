@@ -130,7 +130,7 @@ export function BazilHero() {
                 </div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#FDA228]">5+</div>
+                <div className="text-3xl font-bold text-[#FDA228]">4+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">
                   Years Exp
                 </div>

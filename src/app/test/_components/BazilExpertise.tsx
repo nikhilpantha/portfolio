@@ -320,7 +320,7 @@ export function BazilExpertise() {
             {[
               { value: "20+", label: "Technologies" },
               { value: "50+", label: "Projects" },
-              { value: "5+", label: "Years" },
+              { value: "4+", label: "Years" },
               { value: "30+", label: "Clients" },
             ].map((stat, index) => (
               <div key={index}>

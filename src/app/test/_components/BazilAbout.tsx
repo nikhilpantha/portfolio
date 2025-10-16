@@ -160,7 +160,7 @@ export function BazilAbout() {
 
               {/* Floating Stats Card */}
               <div className="absolute -bottom-8 -right-8 bg-white dark:bg-black p-8 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800">
-                <div className="text-5xl font-bold text-[#FDA228] mb-2">5+</div>
+                <div className="text-5xl font-bold text-[#FDA228] mb-2">4+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
                   Years of
                   <br />
