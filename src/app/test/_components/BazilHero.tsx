@@ -17,7 +17,7 @@ export function BazilHero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-6 pt-20 lg:pt-0  bg-white dark:bg-black overflow-x-hidden"
+      className="relative min-h-screen flex items-center justify-center px-6 pt-20 lg:pt-0  bg-white dark:bg-black"
     >
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">

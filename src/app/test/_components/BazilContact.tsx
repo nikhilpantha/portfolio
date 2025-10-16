@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const contactInfo = [
   {
@@ -118,6 +119,7 @@ export function BazilContact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -131,11 +133,49 @@ export function BazilContact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    alert("Message sent successfully!");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      // Success
+      toast.success("Message sent successfully! I'll get back to you soon.", {
+        duration: 5000,
+        style: {
+          background: "#FDA228",
+          color: "#000",
+          fontWeight: "600",
+        },
+      });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Failed to send message";
+      setError(errorMessage);
+      toast.error(errorMessage, {
+        duration: 5000,
+        style: {
+          background: "#EF4444",
+          color: "#fff",
+          fontWeight: "600",
+        },
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -143,6 +183,7 @@ export function BazilContact() {
       id="contact"
       className="py-32 px-6 bg-white dark:bg-black relative overflow-hidden"
     >
+      <Toaster position="top-center" reverseOrder={false} />
       {/* Background - Matching Hero Style */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -238,8 +279,8 @@ export function BazilContact() {
                   </h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400">
-                  I&apos;m currently available for freelance projects and full-time
-                  opportunities.
+                  I&apos;m currently available for freelance projects and
+                  full-time opportunities.
                 </p>
               </div>
             </div>
@@ -327,6 +368,30 @@ export function BazilContact() {
                   placeholder="Tell me about your project..."
                 />
               </div>
+
+              {/* Error Message */}
+              {error && (
+                <div className="p-4 bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <svg
+                      className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <p className="text-sm font-semibold text-red-600 dark:text-red-400">
+                      {error}
+                    </p>
+                  </div>
+                </div>
+              )}
 
               {/* Submit Button */}
               <button
