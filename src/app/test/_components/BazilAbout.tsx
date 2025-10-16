@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 
 const techStack = [
   {
@@ -173,18 +172,18 @@ export function BazilAbout() {
             {/* Introduction */}
             <div className="space-y-6">
               <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm a passionate <span className="text-black dark:text-white font-semibold">Full-Stack Developer</span> with
+                I&apos;m a passionate <span className="text-black dark:text-white font-semibold">Full-Stack Developer</span> with
                 a strong focus on creating exceptional digital experiences that combine beautiful
                 design with powerful functionality.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                My journey in web development started over 5 years ago, and since then, I've had
+                My journey in web development started over 5 years ago, and since then, I&apos;ve had
                 the privilege of working with startups, agencies, and enterprise clients to bring
                 their visions to life. I specialize in building scalable web applications using
                 modern technologies and best practices.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies, contributing to
+                When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to
                 open-source projects, or sharing knowledge through technical writing and mentoring.
               </p>
             </div>
@@ -308,7 +307,7 @@ export function BazilAbout() {
               href="#contact"
               className="px-8 py-4 bg-[#FDA228] text-black font-bold rounded-full hover:bg-black hover:text-[#FDA228] dark:hover:bg-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(253,162,40,0.5)]"
             >
-              Let's Work Together
+              Let&apos;s Work Together
             </a>
             <button className="px-8 py-4 bg-transparent border-2 border-black dark:border-white text-black dark:text-white font-bold rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 hover:scale-105">
               Download Resume

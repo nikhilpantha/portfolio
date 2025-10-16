@@ -200,7 +200,7 @@ export function BazilServices() {
         {/* Bottom CTA */}
         <div className="mt-20 text-center">
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Need something custom? Let's discuss your project
+            Need something custom? Let&apos;s discuss your project
           </p>
           <a
             href="#contact"

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Details = {
   image: string;
   title: string;
@@ -17,11 +19,14 @@ export default function ProjectCard({
 }: Details) {
   return (
     <div className="bg-white mx-auto flex w-full max-w-sm flex-col rounded-2xl p-3 shadow">
-      <img
-        src={image}
-        alt={title}
-        className="h-full w-full rounded-t-lg object-cover"
-      />
+      <div className="relative h-48 w-full">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="rounded-t-lg object-cover"
+        />
+      </div>
       <div className="bg-white flex min-h-[140px] w-full max-w-md flex-col justify-between rounded-2xl p-4 shadow">
         <div className="flex items-start justify-between">
           <div>

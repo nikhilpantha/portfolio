@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import { projects, categories } from "./projectsData";
 
 export function BazilProjects() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [showAll, setShowAll] = useState(false);
 
@@ -84,16 +84,15 @@ export function BazilProjects() {
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s backwards`,
               }}
-              onMouseEnter={() => setHoveredId(project.id)}
-              onMouseLeave={() => setHoveredId(null)}
               onClick={() => handleProjectClick(project.url)}
             >
               {/* Project Image */}
               <div className="absolute inset-0">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
               </div>

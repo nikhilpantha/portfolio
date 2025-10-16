@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -33,8 +33,6 @@ const testimonials = [
 ];
 
 export function BazilTestimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <section className="py-24 px-6 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto">
@@ -51,12 +49,11 @@ export function BazilTestimonials() {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
               data-cursor-text="READ"
               className="group p-8 bg-gray-50 dark:bg-gray-950 rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
-              onMouseEnter={() => setActiveIndex(index)}
             >
               {/* Quote Icon */}
               <div className="mb-6 text-[#FDA228]">
@@ -71,16 +68,18 @@ export function BazilTestimonials() {
 
               {/* Content */}
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 italic">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="relative">
-                  <img
+                <div className="relative w-14 h-14">
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-[#FDA228]"
+                    width={56}
+                    height={56}
+                    className="rounded-full object-cover border-2 border-[#FDA228]"
                   />
                   <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#FDA228] rounded-full flex items-center justify-center">
                     <svg
@@ -129,7 +128,7 @@ export function BazilTestimonials() {
             Ready to Start Your Project?
           </h3>
           <p className="text-lg text-black/80 mb-8 max-w-2xl mx-auto">
-            Let's create something amazing together. Get in touch and let's
+            Let&apos;s create something amazing together. Get in touch and let&apos;s
             discuss how we can bring your vision to life.
           </p>
           <button

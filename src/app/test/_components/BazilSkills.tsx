@@ -308,7 +308,7 @@ export function BazilSkills() {
             { label: "Years Coding", value: "5+", icon: "⏱️" },
             { label: "Projects Built", value: "50+", icon: "🚀" },
             { label: "Lines of Code", value: "100K+", icon: "📝" },
-          ].map((stat, index) => (
+          ].map((stat) => (
             <div
               key={stat.label}
               className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-[#FDA228] transition-all duration-300 hover:scale-105 hover:shadow-xl text-center"

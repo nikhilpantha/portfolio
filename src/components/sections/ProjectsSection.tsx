@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { SITE_DATA } from "@/config";
 
 export function ProjectsSection() {
@@ -62,12 +63,13 @@ export function ProjectsSection() {
               >
                 <div className="relative overflow-hidden rounded-xl bg-muted aspect-video hover-lift">
                   {/* Project image */}
-                  <img 
-                    src={project.image} 
+                  <Image
+                    src={project.image}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
-                  
+
                 </div>
 
                 {/* Project Info */}

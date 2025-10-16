@@ -238,7 +238,7 @@ export function BazilContact() {
                   </h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400">
-                  I'm currently available for freelance projects and full-time
+                  I&apos;m currently available for freelance projects and full-time
                   opportunities.
                 </p>
               </div>

@@ -2,6 +2,7 @@
 
 import { SITE_DATA } from "@/config";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export function HeroSection() {
   const [mounted, setMounted] = useState(false);
@@ -266,10 +267,12 @@ export function HeroSection() {
                   {/* Profile image container */}
                   <div className="from-card/80 to-card/40 border-border absolute inset-4 overflow-hidden rounded-full border bg-gradient-to-br shadow-2xl backdrop-blur-sm">
                     {/* Actual profile image */}
-                    <img
+                    <Image
                       src="/Meghraj.png"
                       alt={`${SITE_DATA.personal.name} - ${SITE_DATA.personal.role}`}
-                      className="h-full w-full object-cover object-center"
+                      fill
+                      className="object-cover object-center"
+                      priority
                     />
                     {/* Subtle overlay for better integration */}
                     <div className="to-primary/5 pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent" />
