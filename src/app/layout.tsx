@@ -6,6 +6,7 @@ import { ToastProvider } from "@/components/providers/ToastProvider";
 import { Navigation } from "@/components/Layout/Navigation";
 import { LoadingScreen } from "@/components/Layout/LoadingScreen";
 import { SITE_DATA } from "@/config";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,6 +62,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ToastProvider>
+            <Toaster position="top-right" />
             <Navigation />
             <LoadingScreen>
               <div className="relative min-h-screen bg-background">

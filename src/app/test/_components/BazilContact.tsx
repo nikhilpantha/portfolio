@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const contactInfo = [
   {
@@ -136,6 +136,7 @@ export function BazilContact() {
     setError("");
 
     try {
+      console.log("Submitting form...");
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -145,14 +146,17 @@ export function BazilContact() {
       });
 
       const data = await response.json();
+      console.log("Response:", response.status, data);
 
       if (!response.ok) {
         throw new Error(data.error || "Failed to send message");
       }
 
       // Success
+      console.log("Showing success toast...");
       toast.success("Message sent successfully! I'll get back to you soon.", {
         duration: 5000,
+        position: "top-right",
         style: {
           background: "#FDA228",
           color: "#000",
@@ -162,11 +166,13 @@ export function BazilContact() {
 
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
+      console.error("Error:", error);
       const errorMessage =
         error instanceof Error ? error.message : "Failed to send message";
       setError(errorMessage);
       toast.error(errorMessage, {
         duration: 5000,
+        position: "top-right",
         style: {
           background: "#EF4444",
           color: "#fff",
@@ -183,7 +189,6 @@ export function BazilContact() {
       id="contact"
       className="py-32 px-6 bg-white dark:bg-black relative overflow-hidden"
     >
-      <Toaster position="top-center" reverseOrder={false} />
       {/* Background - Matching Hero Style */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
