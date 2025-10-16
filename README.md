@@ -1,1 +1,1 @@
-nikhil pantha - full-stack development
+Nikhil Pantha - Full-Stack Development
