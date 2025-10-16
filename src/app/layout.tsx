@@ -98,9 +98,6 @@ export default function RootLayout({
                           &copy; {new Date().getFullYear()}{" "}
                           {SITE_DATA.metadata.author}. All rights reserved.
                         </p>
-                        <p className="mt-2 text-sm">
-                          Built with Next.js, TypeScript, and Tailwind CSS
-                        </p>
                       </div>
                     </div>
                   </footer>
