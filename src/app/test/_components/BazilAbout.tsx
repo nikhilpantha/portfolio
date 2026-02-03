@@ -183,7 +183,7 @@ export function BazilAbout() {
                 that combine beautiful design with powerful functionality.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                My journey in web development started over 5 years ago, and
+                My journey in web development started over 4 years ago, and
                 since then, I&apos;ve had the privilege of working with
                 startups, agencies, and enterprise clients to bring their
                 visions to life. I specialize in building scalable web
