@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
@@ -7,6 +7,11 @@ import { Navigation } from "@/components/Layout/Navigation";
 import { LoadingScreen } from "@/components/Layout/LoadingScreen";
 import { SITE_DATA } from "@/config";
 import { Toaster } from "react-hot-toast";
+import {
+  generatePersonSchema,
+  generateWebsiteSchema,
+  generateBreadcrumbSchema,
+} from "./jsonld";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,6 +25,25 @@ export const metadata: Metadata = {
   keywords: SITE_DATA.metadata.keywords,
   authors: [{ name: SITE_DATA.metadata.author }],
   creator: SITE_DATA.metadata.author,
+  metadataBase: new URL(SITE_DATA.metadata.url),
+  applicationName: SITE_DATA.metadata.siteName,
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: SITE_DATA.metadata.title,
+  },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
+  alternates: {
+    canonical: SITE_DATA.metadata.url,
+    languages: {
+      "en-US": `${SITE_DATA.metadata.url}/en`,
+      en: SITE_DATA.metadata.url,
+    },
+  },
   openGraph: {
     type: SITE_DATA.metadata.type as "website",
     locale: SITE_DATA.metadata.locale,
@@ -27,24 +51,64 @@ export const metadata: Metadata = {
     title: SITE_DATA.metadata.title,
     description: SITE_DATA.metadata.description,
     siteName: SITE_DATA.metadata.siteName,
+    countryName: "Nepal",
+    images: [
+      {
+        url: `${SITE_DATA.metadata.url}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Nikhil Pantha - Full Stack Developer",
+        type: "image/jpeg",
+      },
+      {
+        url: `${SITE_DATA.metadata.url}/og-image-square.jpg`,
+        width: 500,
+        height: 500,
+        alt: "Nikhil Pantha Developer",
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_DATA.metadata.title,
     description: SITE_DATA.metadata.description,
     creator: SITE_DATA.metadata.twitter,
+    site: SITE_DATA.metadata.twitter,
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
+    yandex: "YOUR_YANDEX_VERIFICATION_CODE",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  category: "Technology",
+  referrer: "strict-origin-when-cross-origin",
+};
+
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
 };
 
 export default function RootLayout({
@@ -54,6 +118,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generatePersonSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateWebsiteSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateBreadcrumbSchema()),
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
