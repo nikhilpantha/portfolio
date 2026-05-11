@@ -20,7 +20,7 @@ export default async function ProtectedLayout({
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
       <header className="sticky top-0 z-10 border-b border-black/10 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-black/80">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <span className="text-xl font-bold text-[#FDA228]">Meghraj.</span>
+          <span className="text-xl font-bold text-[#FDA228]">Nikhil.</span>
           <span className="text-xs font-semibold uppercase tracking-widest text-black/40 dark:text-white/40">
             Admin Panel
           </span>

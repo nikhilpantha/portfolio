@@ -24,12 +24,12 @@ const HeroSection = () => {
         <Heading
           as="h1"
           weight="medium"
-          text="Hey, I’m Meghraj. I'm a 
+          text="Hey, I’m Nikhil. I'm a 
 Full Stack Developer."
           className="text-center text-primary"
         />
         <Paragraph
-          text="Meghraj is a versatile developer based in Nepal, dedicated to crafting innovative and visually appealing Web & Mobile applications."
+          text="Nikhil is a versatile developer based in Nepal, dedicated to crafting innovative and visually appealing Web & Mobile applications."
           weight="medium"
           variant="para-18"
           className="text-center text-secondary"
