@@ -16,19 +16,19 @@ export const contactConfig = {
       name: "GitHub",
       icon: "🔗",
       url: "https://github.com/nikhilpantha",
-      username: "@meghrajgiri",
+      username: "@Nikhilpantha",
     },
     {
       name: "LinkedIn",
       icon: "💼",
       url: "https://linkedin.com/in/nikhilpantha",
-      username: "in/meghrajgiri",
+      username: "in/Nikhilpantha",
     },
     // {
     //   name: "Twitter",
     //   icon: "🐦",
-    //   url: "https://twitter.com/meghrajgiri",
-    //   username: "@meghrajgiri",
+    //   url: "https://twitter.com/Nikhilpantha",
+    //   username: "@Nikhilpantha",
     // },
     {
       name: "Instagram",

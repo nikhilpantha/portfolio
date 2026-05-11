@@ -84,8 +84,8 @@ export const siteConfig = {
     title: "Nikhil Pantha - Frontend Engineer",
     description:
       "Full Stack Developer specializing in modern web technologies. Building exceptional digital experiences with clean code and innovative solutions.",
-    url: "https://meghrajgiri.dev",
-    twitter: "@meghrajgiri",
+    url: "https://Nikhilpantha.dev",
+    twitter: "@Nikhilpantha",
   },
 };
 
