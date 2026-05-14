@@ -2,13 +2,16 @@ export const metadataConfig = {
   // PRIMARY SEO FIELDS - CRITICAL
   title: "Nikhil Pantha | Full Stack Developer & React Specialist | Nepal",
   description:
-    "Nikhil Pantha is an award-winning Full Stack Developer and React specialist from Nepal with 4+ years of experience. Expert in Next.js, TypeScript, and modern web technologies. Building high-performance web applications, custom solutions, and digital transformations. Available for freelance projects, consulting, and collaborations. Proven track record: 50+ successful projects, 100% client satisfaction.",
+    "Nikhil Pantha is a Full Stack Developer from Nepal with 4+ years of experience specializing in React, Next.js, and TypeScript. BSc CSIT graduate (Tribhuvan University, 2024). Expert in building high-performance web applications across Fin-Tech, Ed-Tech, E-Commerce, and Web3. 50+ completed projects. Available for freelance and consulting. Contact: nikhilpantha207@gmail.com",
 
   // ENHANCED KEYWORDS - 30+ Strategic Keywords
   keywords: [
-    // Brand & Name
+    // Brand & Name - MOST IMPORTANT FOR YOU
     "Nikhil Pantha",
     "Nikhil Pantha Developer",
+    "Nikhil Pantha Nepal",
+    "Nikhil",
+    "Pantha Developer",
 
     // Core Technologies (High Volume)
     "Full Stack Developer",
@@ -32,6 +35,7 @@ export const metadataConfig = {
     "Full Stack Developer Nepal",
     "React Developer Nepal",
     "Freelance Developer Nepal",
+    "Nepal Web Developer",
 
     // Service-Based
     "Web Development",
@@ -40,6 +44,7 @@ export const metadataConfig = {
     "Responsive Web Design",
     "Progressive Web Apps",
     "Web Application Development",
+    "Web Development Services Nepal",
 
     // Additional SEO
     "Portfolio",
@@ -51,12 +56,12 @@ export const metadataConfig = {
   ],
 
   author: "Nikhil Pantha",
-  url: "http://nikhilpantha.com.np",
+  url: "https://nikhilpantha.com.np",
   siteName: "Nikhil Pantha - Full Stack Developer Portfolio",
   twitter: "@nikhilpantha",
   locale: "en_US",
   type: "website",
-  image: "http://nikhilpantha.com.np/og-image.jpg",
+  image: "https://nikhilpantha.com.np/og-image.jpg",
 
   // SCHEMA STRUCTURED DATA
   structuredData: {
@@ -65,8 +70,8 @@ export const metadataConfig = {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "Nikhil Pantha - Developer",
-      url: "http://nikhilpantha.com.np",
-      logo: "http://nikhilpantha.com.np/logo.jpg",
+      url: "https://nikhilpantha.com.np",
+      logo: "https://nikhilpantha.com.np/logo.jpg",
       description:
         "Full Stack Developer specializing in modern web technologies",
       sameAs: [
@@ -88,8 +93,8 @@ export const metadataConfig = {
       "@context": "https://schema.org/",
       "@type": "Person",
       name: "Nikhil Pantha",
-      url: "http://nikhilpantha.com.np",
-      image: "http://nikhilpantha.com.np/profile.jpg",
+      url: "https://nikhilpantha.com.np",
+      image: "https://nikhilpantha.com.np/profile.jpg",
       jobTitle: "Full Stack Developer",
       worksFor: {
         "@type": "Organization",
@@ -122,7 +127,7 @@ export const metadataConfig = {
       "@context": "https://schema.org/",
       "@type": "WebSite",
       name: "Nikhil Pantha Portfolio",
-      url: "http://nikhilpantha.com.np",
+      url: "https://nikhilpantha.com.np",
       description:
         "Full Stack Developer portfolio showcasing React, Next.js, and modern web development expertise",
       creator: {
@@ -131,7 +136,7 @@ export const metadataConfig = {
       },
       potentialAction: {
         "@type": "SearchAction",
-        target: "http://nikhilpantha.com.np/search?s={search_term_string}",
+        target: "https://nikhilpantha.com.np/search?s={search_term_string}",
         "query-input": "required name=search_term_string",
       },
     },

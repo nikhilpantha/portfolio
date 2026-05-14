@@ -37,22 +37,22 @@ export function HeroSection() {
     }
   };
 
-  if (!mounted) return null;
-
   return (
     <section
       id="hero-section"
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 sm:px-0 bg-background"
     >
-      {/* Mouse Follow Effect */}
-      <div
-        className="from-primary/5 via-primary/10 dark:from-primary/3 dark:via-primary/6 pointer-events-none absolute h-64 w-64 rounded-full bg-gradient-to-r to-transparent blur-3xl transition-all duration-300 ease-out"
-        style={{
-          left: mousePosition.x - 128,
-          top: mousePosition.y - 128,
-          transform: `translate3d(0, 0, 0)`,
-        }}
-      />
+      {/* Mouse Follow Effect - client only */}
+      {mounted && (
+        <div
+          className="from-primary/5 via-primary/10 dark:from-primary/3 dark:via-primary/6 pointer-events-none absolute h-64 w-64 rounded-full bg-gradient-to-r to-transparent blur-3xl transition-all duration-300 ease-out"
+          style={{
+            left: mousePosition.x - 128,
+            top: mousePosition.y - 128,
+            transform: `translate3d(0, 0, 0)`,
+          }}
+        />
+      )}
 
       {/* Beautiful Static Background */}
       <div className="via-muted/10 absolute inset-0 bg-gradient-to-br from-background to-background">
@@ -85,23 +85,25 @@ export function HeroSection() {
           <div className="from-accent-foreground/15 absolute bottom-0 right-1/3 h-24 w-px rotate-45 transform bg-gradient-to-t to-transparent" />
         </div>
 
-        {/* Floating sparkles - reduced on mobile */}
-        <div className="pointer-events-none absolute inset-0">
-          {[...Array(4)].map((_, i) => (
-            <div
-              key={i}
-              className="animate-float absolute hidden sm:block"
-              style={{
-                left: `${15 + Math.random() * 70}%`,
-                top: `${15 + Math.random() * 70}%`,
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${4 + Math.random() * 4}s`,
-              }}
-            >
-              <div className="bg-primary/40 h-1 w-1 animate-ping rounded-full" />
-            </div>
-          ))}
-        </div>
+        {/* Floating sparkles - client only to avoid hydration mismatch */}
+        {mounted && (
+          <div className="pointer-events-none absolute inset-0">
+            {[...Array(4)].map((_, i) => (
+              <div
+                key={i}
+                className="animate-float absolute hidden sm:block"
+                style={{
+                  left: `${15 + Math.random() * 70}%`,
+                  top: `${15 + Math.random() * 70}%`,
+                  animationDelay: `${Math.random() * 6}s`,
+                  animationDuration: `${4 + Math.random() * 4}s`,
+                }}
+              >
+                <div className="bg-primary/40 h-1 w-1 animate-ping rounded-full" />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Main Content */}
@@ -113,6 +115,10 @@ export function HeroSection() {
             <div className="animate-fadeIn space-y-6">
               {/* Creative Title Design */}
               <div className="mx-auto max-w-4xl space-y-8 lg:mx-0">
+                {/* Name eyebrow - crawlable identity anchor */}
+                <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+                  {SITE_DATA.hero.eyebrow}
+                </p>
                 {/* Creative Main Title */}
                 <div className="relative">
                   <h1 className="text-3xl font-black leading-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
@@ -333,21 +339,23 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Floating particles - reduced on mobile */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {[...Array(4)].map((_, i) => (
-          <div
-            key={i}
-            className="bg-primary/20 animate-float absolute hidden h-2 w-2 rounded-full sm:block"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating particles - client only to avoid hydration mismatch */}
+      {mounted && (
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {[...Array(4)].map((_, i) => (
+            <div
+              key={i}
+              className="bg-primary/20 animate-float absolute hidden h-2 w-2 rounded-full sm:block"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`,
+              }}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

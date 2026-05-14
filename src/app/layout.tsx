@@ -11,6 +11,9 @@ import {
   generatePersonSchema,
   generateWebsiteSchema,
   generateBreadcrumbSchema,
+  generateFAQSchema,
+  generateProfilePageSchema,
+  generateLocalBusinessSchema,
 } from "./jsonld";
 
 const inter = Inter({
@@ -39,13 +42,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: SITE_DATA.metadata.url,
-    languages: {
-      "en-US": `${SITE_DATA.metadata.url}/en`,
-      en: SITE_DATA.metadata.url,
-    },
   },
   openGraph: {
-    type: SITE_DATA.metadata.type as "website",
+    type: "website",
     locale: SITE_DATA.metadata.locale,
     url: SITE_DATA.metadata.url,
     title: SITE_DATA.metadata.title,
@@ -89,10 +88,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
-    yandex: "YOUR_YANDEX_VERIFICATION_CODE",
-  },
   icons: {
     icon: "/favicon.ico",
     apple: [
@@ -101,6 +96,11 @@ export const metadata: Metadata = {
   },
   category: "Technology",
   referrer: "strict-origin-when-cross-origin",
+  other: {
+    "profile:first_name": "Nikhil",
+    "profile:last_name": "Pantha",
+    "profile:username": "nikhilpantha",
+  },
 };
 
 export const viewport: Viewport = {
@@ -134,9 +134,30 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateProfilePageSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema()),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateFAQSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateLocalBusinessSchema()),
+          }}
+        />
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider

@@ -1,6 +1,6 @@
 export const personalConfig = {
   name: "Nikhil Pantha",
-  role: "Frontend Engineer",
+  role: "Full Stack Developer",
   initials: "NP",
   email: "nikhilpantha207@gmail.com",
   location: "Nepal",

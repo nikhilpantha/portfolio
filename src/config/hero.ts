@@ -1,4 +1,5 @@
 export const heroConfig = {
+  eyebrow: "Nikhil Pantha · Full Stack Developer",
   mainTitle: {
     line1: "Building Digital",
     line2: "Experiences",

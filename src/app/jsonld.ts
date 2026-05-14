@@ -1,42 +1,74 @@
+const BASE_URL = "https://nikhilpantha.com.np";
+
 export const generatePersonSchema = () => {
   return {
     "@context": "https://schema.org/",
     "@type": "Person",
+    "@id": `${BASE_URL}/#person`,
     name: "Nikhil Pantha",
-    url: "http://nikhilpantha.com.np",
-    image: "http://nikhilpantha.com.np/profile.jpg",
+    givenName: "Nikhil",
+    familyName: "Pantha",
+    url: BASE_URL,
+    image: {
+      "@type": "ImageObject",
+      url: `${BASE_URL}/profile.jpg`,
+      width: 400,
+      height: 400,
+    },
     jobTitle: "Full Stack Developer",
     worksFor: {
       "@type": "Organization",
       name: "Freelance",
     },
-    sameAs: [
-      "https://linkedin.com/in/nikhilpantha",
-      "https://github.com/nikhilpantha",
-      "https://twitter.com/nikhilpantha",
-      "https://instagram.com/pantha.nikhil",
-    ],
+    birthPlace: {
+      "@type": "Place",
+      name: "Nepal",
+    },
+    nationality: {
+      "@type": "Country",
+      name: "Nepal",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": BASE_URL,
+    },
     description:
-      "Full Stack Developer specializing in React, Next.js, and TypeScript. Building exceptional digital experiences with clean code and innovative solutions.",
+      "Nikhil Pantha is a Full Stack Developer from Nepal specializing in React, Next.js, and TypeScript with 4+ years of professional experience building high-performance web applications.",
     knowsAbout: [
       "React",
       "Next.js",
       "TypeScript",
       "JavaScript",
       "Frontend Development",
-      "Web Development",
+      "Backend Development",
       "Full Stack Development",
+      "Web Development",
       "Tailwind CSS",
       "Node.js",
       "AWS",
       "Web Design",
       "UI/UX Design",
+      "React Native",
+      "Docker",
+    ],
+    knowsLanguage: ["English", "Nepali"],
+    sameAs: [
+      "https://www.linkedin.com/in/nikhilpantha",
+      "https://github.com/nikhilpantha",
+      "https://twitter.com/nikhilpantha",
+      "https://instagram.com/pantha.nikhil",
     ],
     email: "nikhilpantha207@gmail.com",
     contactPoint: {
       "@type": "ContactPoint",
-      contactType: "General",
+      contactType: "Professional",
       email: "nikhilpantha207@gmail.com",
+      availableLanguage: ["English", "Nepali"],
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Tribhuvan University",
+      sameAs: "https://www.tribhuvan-university.edu.np",
     },
   };
 };
@@ -45,19 +77,52 @@ export const generateWebsiteSchema = () => {
   return {
     "@context": "https://schema.org/",
     "@type": "WebSite",
-    name: "Nikhil Pantha Portfolio",
-    url: "http://nikhilpantha.com.np",
+    "@id": `${BASE_URL}/#website`,
+    name: "Nikhil Pantha - Full Stack Developer Portfolio",
+    url: BASE_URL,
     description:
-      "Professional portfolio of Nikhil Pantha, Full Stack Developer from Nepal",
-    creator: {
+      "Official portfolio of Nikhil Pantha, Full Stack Developer from Nepal specializing in React, Next.js, and TypeScript.",
+    inLanguage: "en-US",
+    author: {
       "@type": "Person",
+      "@id": `${BASE_URL}/#person`,
       name: "Nikhil Pantha",
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "http://nikhilpantha.com.np/search?s={search_term_string}",
-      "query-input": "required name=search_term_string",
+    creator: {
+      "@type": "Person",
+      "@id": `${BASE_URL}/#person`,
+      name: "Nikhil Pantha",
     },
+    dateModified: new Date().toISOString(),
+  };
+};
+
+export const generateProfilePageSchema = () => {
+  return {
+    "@context": "https://schema.org/",
+    "@type": "ProfilePage",
+    "@id": `${BASE_URL}/#profilepage`,
+    name: "Nikhil Pantha - Full Stack Developer Portfolio",
+    url: BASE_URL,
+    description:
+      "Official portfolio and profile of Nikhil Pantha, Full Stack Developer from Nepal.",
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${BASE_URL}/#person`,
+      name: "Nikhil Pantha",
+    },
+    about: {
+      "@type": "Person",
+      "@id": `${BASE_URL}/#person`,
+      name: "Nikhil Pantha",
+    },
+    author: {
+      "@type": "Person",
+      "@id": `${BASE_URL}/#person`,
+      name: "Nikhil Pantha",
+    },
+    inLanguage: "en-US",
+    dateModified: new Date().toISOString(),
   };
 };
 
@@ -65,56 +130,33 @@ export const generateBreadcrumbSchema = () => {
   return {
     "@context": "https://schema.org/",
     "@type": "BreadcrumbList",
+    "@id": `${BASE_URL}/#breadcrumb`,
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
-        name: "Home",
-        item: "http://nikhilpantha.com.np",
+        name: "Nikhil Pantha - Home",
+        item: BASE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "About",
-        item: "http://nikhilpantha.com.np/#about",
+        name: "About Nikhil Pantha",
+        item: `${BASE_URL}/#about`,
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: "Projects",
-        item: "http://nikhilpantha.com.np/#projects",
+        name: "Projects by Nikhil Pantha",
+        item: `${BASE_URL}/#projects`,
       },
       {
         "@type": "ListItem",
         position: 4,
-        name: "Contact",
-        item: "http://nikhilpantha.com.np/#contact",
+        name: "Contact Nikhil Pantha",
+        item: `${BASE_URL}/#contact`,
       },
     ],
-  };
-};
-
-export const generateOrganizationSchema = () => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Nikhil Pantha - Developer",
-    url: "http://nikhilpantha.com.np",
-    logo: "http://nikhilpantha.com.np/logo.jpg",
-    description: "Full Stack Developer specializing in modern web technologies",
-    sameAs: [
-      "https://linkedin.com/in/nikhilpantha",
-      "https://github.com/nikhilpantha",
-      "https://twitter.com/nikhilpantha",
-      "https://instagram.com/pantha.nikhil",
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "General Support",
-      email: "nikhilpantha207@gmail.com",
-    },
-    areaServed: "NP",
-    serviceType: "Web Development Services",
   };
 };
 
@@ -125,34 +167,42 @@ export const generateFAQSchema = () => {
     mainEntity: [
       {
         "@type": "Question",
+        name: "Who is Nikhil Pantha?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Nikhil Pantha is a Full Stack Developer from Nepal with 4+ years of professional experience. He specializes in React, Next.js, TypeScript, and modern web technologies, and has completed 50+ projects across Fin-Tech, Ed-Tech, E-Commerce, and Web3 industries.",
+        },
+      },
+      {
+        "@type": "Question",
         name: "What does Nikhil Pantha do?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Nikhil Pantha is a Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. He builds high-performance web applications and provides consulting services.",
+          text: "Nikhil Pantha is a Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. He builds high-performance web applications and provides freelance consulting services.",
         },
       },
       {
         "@type": "Question",
-        name: "What technologies does Nikhil specialize in?",
+        name: "Where is Nikhil Pantha from?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Nikhil specializes in React, Next.js, TypeScript, JavaScript, Tailwind CSS, Node.js, AWS, and modern frontend/backend web development.",
+          text: "Nikhil Pantha is from Nepal and is a graduate of Tribhuvan University (BSc CSIT, 2024).",
         },
       },
       {
         "@type": "Question",
-        name: "Is Nikhil available for freelance projects?",
+        name: "What technologies does Nikhil Pantha specialize in?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, Nikhil is available for freelance projects, consulting, and collaborations. Contact him via email at nikhilpantha207@gmail.com.",
+          text: "Nikhil Pantha specializes in React, Next.js, TypeScript, JavaScript, Tailwind CSS, Node.js, AWS, and modern frontend and backend web development.",
         },
       },
       {
         "@type": "Question",
-        name: "What is Nikhil's experience?",
+        name: "How can I hire Nikhil Pantha?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Nikhil has 4+ years of professional experience in web development with 50+ successful projects completed and 100% client satisfaction.",
+          text: "Nikhil Pantha is available for freelance projects, consulting, and full-time collaborations. You can contact him at nikhilpantha207@gmail.com or through his portfolio at nikhilpantha.com.np.",
         },
       },
     ],
@@ -162,27 +212,38 @@ export const generateFAQSchema = () => {
 export const generateLocalBusinessSchema = () => {
   return {
     "@context": "https://schema.org/",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
+    "@id": `${BASE_URL}/#service`,
     name: "Nikhil Pantha - Full Stack Developer",
-    image: "http://nikhilpantha.com.np/profile.jpg",
+    image: `${BASE_URL}/profile.jpg`,
     description:
-      "Full Stack Developer providing web development services in Nepal",
+      "Professional full stack web development services by Nikhil Pantha, specializing in React, Next.js, and TypeScript.",
+    url: BASE_URL,
+    email: "nikhilpantha207@gmail.com",
     address: {
       "@type": "PostalAddress",
       addressCountry: "NP",
       addressLocality: "Nepal",
     },
-    email: "nikhilpantha207@gmail.com",
-    url: "http://nikhilpantha.com.np",
     sameAs: [
-      "https://linkedin.com/in/nikhilpantha",
+      "https://www.linkedin.com/in/nikhilpantha",
       "https://github.com/nikhilpantha",
-      "https://twitter.com/nikhilpantha",
     ],
-    priceRange: "$",
-    serviceArea: {
-      "@type": "Country",
-      name: "Nepal",
+    areaServed: "Worldwide",
+    availableLanguage: ["English", "Nepali"],
+    priceRange: "$$",
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Full Stack Development",
+      "Web Development",
+      "Frontend Development",
+    ],
+    provider: {
+      "@type": "Person",
+      "@id": `${BASE_URL}/#person`,
+      name: "Nikhil Pantha",
     },
   };
 };
