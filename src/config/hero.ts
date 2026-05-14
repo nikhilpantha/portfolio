@@ -1,11 +1,11 @@
 export const heroConfig = {
-  eyebrow: "Nikhil Pantha · Full Stack Developer",
+  eyebrow: "Co-Founder of ThriftVerse & React Native Developer",
   mainTitle: {
     line1: "Building Digital",
     line2: "Experiences",
   },
   description:
-    "Crafting digital experiences that blend innovative design with clean code",
+    "I build modern websites and scalable mobile applications using React, React Native, Node.js, and modern frontend technologies.",
   highlightedTerms: {
     term1: "innovative design",
     term2: "clean code",

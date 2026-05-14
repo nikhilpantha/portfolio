@@ -33,9 +33,10 @@ export const generatePersonSchema = () => {
       "@id": BASE_URL,
     },
     description:
-      "Nikhil Pantha is a Full Stack Developer from Nepal specializing in React, Next.js, and TypeScript with 4+ years of professional experience building high-performance web applications.",
+      "Nikhil Pantha is a React Native Developer, Full Stack Developer, and Startup Founder from Nepal specializing in React, React Native, Next.js, and TypeScript with 4+ years of professional experience building modern websites and scalable mobile applications.",
     knowsAbout: [
       "React",
+      "React Native",
       "Next.js",
       "TypeScript",
       "JavaScript",
@@ -43,13 +44,15 @@ export const generatePersonSchema = () => {
       "Backend Development",
       "Full Stack Development",
       "Web Development",
+      "Mobile App Development",
+      "Cross Platform Development",
       "Tailwind CSS",
       "Node.js",
       "AWS",
       "Web Design",
       "UI/UX Design",
-      "React Native",
       "Docker",
+      "App Development",
     ],
     knowsLanguage: ["English", "Nepali"],
     sameAs: [

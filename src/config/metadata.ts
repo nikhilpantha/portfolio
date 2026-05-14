@@ -1,10 +1,11 @@
 export const metadataConfig = {
   // PRIMARY SEO FIELDS - CRITICAL
-  title: "Nikhil Pantha | Full Stack Developer & React Specialist | Nepal",
+  title:
+    "Nikhil Pantha | React Native Developer & Full Stack Developer | Nepal",
   description:
-    "Nikhil Pantha is a Full Stack Developer from Nepal with 4+ years of experience specializing in React, Next.js, and TypeScript. BSc CSIT graduate (Tribhuvan University, 2024). Expert in building high-performance web applications across Fin-Tech, Ed-Tech, E-Commerce, and Web3. 50+ completed projects. Available for freelance and consulting. Contact: nikhilpantha207@gmail.com",
+    "Nikhil Pantha is a React Native Developer, Full Stack Developer, and Startup Founder (ThriftVerse) from Nepal with 4+ years of experience. Specializes in building modern websites and scalable mobile applications using React, React Native, Node.js, and cutting-edge technologies. BSc CSIT graduate (Tribhuvan University, 2024). Expert in cross-platform app development, web development, and UI/UX. 50+ completed projects. Available for freelance and consulting. Contact: nikhilpantha207@gmail.com",
 
-  // ENHANCED KEYWORDS - 30+ Strategic Keywords
+  // ENHANCED KEYWORDS - 50+ Strategic Keywords
   keywords: [
     // Brand & Name - MOST IMPORTANT FOR YOU
     "Nikhil Pantha",
@@ -17,23 +18,36 @@ export const metadataConfig = {
     "Full Stack Developer",
     "Frontend Developer",
     "React Developer",
+    "React Native Developer",
+    "Mobile App Developer",
     "Next.js Developer",
     "TypeScript Developer",
     "JavaScript Developer",
 
+    // Startup & Entrepreneurship
+    "Startup Founder",
+    "ThriftVerse",
+    "ThriftVerse Founder",
+
     // Skill-Based (Long-tail)
     "React.js Specialist",
+    "React Native Specialist",
     "Next.js Expert",
     "Web Application Developer",
     "Custom Web Development",
     "React Development Services",
+    "React Native Development Services",
     "Next.js Development Services",
+    "Cross Platform App Development",
+    "Mobile Application Development",
 
     // Geographic (Local SEO)
     "Web Developer Nepal",
     "Developer Nepal",
     "Full Stack Developer Nepal",
     "React Developer Nepal",
+    "React Native Developer Nepal",
+    "Mobile App Developer Nepal",
     "Freelance Developer Nepal",
     "Nepal Web Developer",
 
@@ -44,7 +58,10 @@ export const metadataConfig = {
     "Responsive Web Design",
     "Progressive Web Apps",
     "Web Application Development",
+    "Mobile App Development",
+    "Cross Platform Development",
     "Web Development Services Nepal",
+    "App Development Services",
 
     // Additional SEO
     "Portfolio",
